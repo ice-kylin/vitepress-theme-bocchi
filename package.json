@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "vitepress": "1.0.0-alpha.40",
+    "vue": "^3.2.45"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@antv/smart-color": "^0.2.1",
+    "@material/material-color-utilities": "^0.2.0",
+    "d3-color": "^3.1.0",
+    "naive-ui": "^2.34.3",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.29",
+    "vfonts": "^0.0.3"
+  }
+}
