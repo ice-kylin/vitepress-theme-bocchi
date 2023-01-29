@@ -1,9 +1,9 @@
 {
+  "author": "ice-kylin <dwsdbcugm@mozmail.com>",
+  "license": "CC-BY-4.0",
   "name": "@bocchi/root",
   "private": true,
   "type": "module",
-  "author": "ice-kylin <dwsdbcugm@mozmail.com>",
-  "license": "CC-BY-4.0",
   "workspaces": [
     "docs",
     "packages/theme"

@@ -5,4 +5,9 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
+  "include": [
+    "vite.config.ts",
+    "tests",
+    "src/**/__tests__"
+  ]
 }

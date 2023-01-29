@@ -1,3 +1,3 @@
-import BocchiTheme from "../../../../packages/theme/src";
+import BocchiTheme from "vitepress-theme-bocchi/src";
 
 export default BocchiTheme;
