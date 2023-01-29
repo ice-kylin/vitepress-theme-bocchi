@@ -22,11 +22,7 @@ export default defineConfig({
             },
         }),
     ],
-
     css: {
-        modules: {
-            localsConvention: "camelCaseOnly",
-            generateScopedName: (name: string) => `rbac-${name}`,
-        },
+        postcss: path.resolve(__dirname, "./postcss.config.cjs"),
     },
 });
