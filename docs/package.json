@@ -1,0 +1,31 @@
+{
+  "name": "@bocchi/docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "example:dev": "vitepress dev example",
+    "example:build": "vitepress build example",
+    "example:preview": "vitepress preview example"
+  },
+  "keywords": [],
+  "author": "ice-kylin <dwsdbcugm@mozmail.com>",
+  "license": "CC-BY-4.0",
+  "dependencies": {
+    "vitepress-theme-bocchi": "workspace:^0.0.0"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.43",
+    "vue": "^3.2.45"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  }
+}

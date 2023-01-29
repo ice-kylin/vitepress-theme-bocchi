@@ -1,0 +1,39 @@
+{
+  "author": "ice-kylin <dwsdbcugm@mozmail.com>",
+  "dependencies": {
+    "@antv/smart-color": "^0.2.1",
+    "@material/material-color-utilities": "^0.2.0",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.29",
+    "vite": "^4.0.4",
+    "vitepress": "1.0.0-alpha.43",
+    "vue": "^3.2.45"
+  },
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "cpx": "^1.5.0",
+    "postcss": "^8.4.21",
+    "rimraf": "^4.1.2",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vitepress-theme-bocchi",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "",
+    "build:watch": "",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,png,jpg}\" lib"
+  },
+  "version": "0.0.0"
+}

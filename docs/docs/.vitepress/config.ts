@@ -1,5 +1,5 @@
 import {defineConfigWithTheme} from "vitepress";
-import {ThemeConfig} from "../../packages/theme/src";
+import {ThemeConfig} from "vitepress-theme-bocchi";
 
 export default defineConfigWithTheme<ThemeConfig>({
     description: "Just playing around.",

@@ -310,3 +310,7 @@ fabric.properties
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,webstorm+all,yarn,node,vue
+
+### vitepress ###
+docs/**/.temp
+docs/**/.cache
