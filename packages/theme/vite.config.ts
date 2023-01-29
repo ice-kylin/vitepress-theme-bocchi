@@ -1,4 +1,3 @@
-import path from "node:path";
 import {defineConfig} from "vite";
 import {buildPlugin} from "vite-plugin-build";
 import vue from "@vitejs/plugin-vue";
@@ -7,22 +6,11 @@ export default defineConfig({
     plugins: [
         vue(),
         buildPlugin({
-            fileBuild: {emitDeclaration: true},
-            libBuild: {
-                buildOptions: {
-                    rollupOptions: {
-                        external: ["vue"],
-                        output: {globals: {vue: "Vue"}},
-                    },
-                    lib: {
-                        entry: path.resolve(__dirname, "./src/index.ts"),
-                        formats: ["es", "cjs"],
-                    },
-                },
+            fileBuild: {
+                emitDeclaration: true,
+                esOutputDir: "lib",
+                commonJsOutputDir: false,
             },
         }),
     ],
-    css: {
-        postcss: path.resolve(__dirname, "./postcss.config.cjs"),
-    },
 });

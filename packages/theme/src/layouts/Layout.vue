@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <h1 class="text-3xl font-bold underline">我好</h1>
+    <h1 class="text-3xl font-bold underline">测试测试</h1>
     <br>
     <div class="footer-wrapper">
       <BFooter></BFooter>
