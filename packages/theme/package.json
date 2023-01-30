@@ -35,11 +35,12 @@
     }
   },
   "scripts": {
-    "build": "pnpm build:dts && pnpm build:tsc && pnpm build:copy",
-    "build:copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,png,jpg}\" lib",
+    "build": "pnpm clean && pnpm build:dts && pnpm build:tsc && pnpm build:copy",
+    "build:copy": "cpx \"src/**/*.{d.ts,vue,scss,css,svg,png,jpg,ttf}\" lib",
     "build:dts": "pnpm vue-tsc --declaration --emitDeclarationOnly",
     "build:tsc": "pnpm tsc --outDir lib",
-    "clean": "rimraf lib && node script/clean.cjs",
+    "clean": "rimraf lib && pnpm clean:src",
+    "clean:src": "node script/clean.cjs",
     "dev": "pnpm dev:dts & pnpm dev:tsc & pnpm dev:copy",
     "dev:copy": "pnpm build:copy --watch",
     "dev:dts": "pnpm build:dts --watch",

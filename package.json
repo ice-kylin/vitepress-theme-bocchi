@@ -4,6 +4,9 @@
   "name": "@bocchi/root",
   "private": true,
   "scripts": {
+    "build": "pnpm --filter=!\"@bocchi/docs\" build",
+    "dev": "pnpm --parallel dev",
+    "update": "pnpm up --latest"
   },
   "type": "module",
   "workspaces": [

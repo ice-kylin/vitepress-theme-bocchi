@@ -6,10 +6,13 @@ function clean(dir) {
     (async () => {
         try {
             for (const file of await fs.readdir(dir, {withFileTypes: true})) {
-                if (file.isFile() && file.name.endsWith(".d.ts")) {
-                    await rimraf(path.resolve(__dirname, dir, file.name));
-                } else if (!file.isFile()) {
-                    await clean(path.resolve(__dirname, dir, file.name));
+                const isFile = file.isFile();
+                const currentPath = path.resolve(dir, file.name);
+
+                if (isFile && file.name.endsWith(".d.ts")) {
+                    await rimraf(currentPath);
+                } else if (!isFile) {
+                    await clean(currentPath);
                 }
             }
         } catch (e) {

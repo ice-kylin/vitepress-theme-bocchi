@@ -1,7 +1,5 @@
 <template>
   <div class="layout">
-    <h1 class="text-3xl font-bold underline">测试测试</h1>
-    <br>
     <div class="footer-wrapper">
       <BFooter></BFooter>
     </div>
@@ -21,9 +19,5 @@ const {lightScheme: light} = storeToRefs(themeStore());
 .layout {
   min-height: 100vh;
   background-color: v-bind('light.background');
-}
-
-.footer-wrapper {
-  bottom: 0;
 }
 </style>
