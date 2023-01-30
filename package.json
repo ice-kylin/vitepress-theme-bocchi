@@ -3,6 +3,8 @@
   "license": "CC-BY-4.0",
   "name": "@bocchi/root",
   "private": true,
+  "scripts": {
+  },
   "type": "module",
   "workspaces": [
     "docs",

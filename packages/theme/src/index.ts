@@ -10,7 +10,7 @@ const pinia = createPinia();
 export default {
     Layout,
     NotFound,
-    enhanceApp({app, router, siteData}) {
+    enhanceApp({app}) {
         app.use(pinia);
     },
     setup() {
