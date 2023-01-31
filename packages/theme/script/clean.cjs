@@ -2,17 +2,29 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 const rimraf = require("rimraf");
 
-function clean(dir) {
+function clearLib() {
+    (async () => {
+        try {
+            await rimraf(path.resolve(__dirname, "../lib"));
+        } catch (e) {
+            console.error(e);
+            console.log("--->8---");
+            console.log("Error while cleaning lib...");
+        }
+    })();
+}
+
+function cleanDts(dir) {
     (async () => {
         try {
             for (const file of await fs.readdir(dir, {withFileTypes: true})) {
                 const isFile = file.isFile();
                 const currentPath = path.resolve(dir, file.name);
 
-                if (isFile && file.name.endsWith(".d.ts")) {
+                if (isFile && (file.name.endsWith(".d.ts") || file.name === "output.css")) {
                     await rimraf(currentPath);
                 } else if (!isFile) {
-                    await clean(currentPath);
+                    await cleanDts(currentPath);
                 }
             }
         } catch (e) {
@@ -23,4 +35,18 @@ function clean(dir) {
     })();
 }
 
-clean(path.resolve(__dirname, "../src"));
+function clearOutputCss() {
+    (async () => {
+        try {
+            await rimraf(path.resolve(__dirname, "../src/styles/output.css"));
+        } catch (e) {
+            console.error(e);
+            console.log("--->8---");
+            console.log("Error while cleaning output.css...");
+        }
+    })();
+}
+
+clearLib();
+cleanDts(path.resolve(__dirname, "../src"));
+clearOutputCss();

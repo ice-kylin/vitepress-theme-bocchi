@@ -6,9 +6,9 @@ import {
     Scheme,
     themeFromSourceColor,
 } from "@material/material-color-utilities";
-import {colorBlend, colorToHex} from "@antv/smart-color";
+import {colorBlend, colorToArray, hexToColor} from "@antv/smart-color";
 
-abstract class CssScheme {
+export abstract class CssScheme {
     primary: string;
     onPrimary: string;
     primaryContainer: string;
@@ -48,57 +48,59 @@ abstract class CssScheme {
         const primary = scheme.primary;
         const surface = scheme.surface;
 
-        this.primary = hexNumToHexString(primary);
-        this.onPrimary = hexNumToHexString(scheme.onPrimary);
-        this.primaryContainer = hexNumToHexString(scheme.primaryContainer);
-        this.onPrimaryContainer = hexNumToHexString(scheme.onPrimaryContainer);
-        this.secondary = hexNumToHexString(scheme.secondary);
-        this.onSecondary = hexNumToHexString(scheme.onSecondary);
-        this.secondaryContainer = hexNumToHexString(scheme.secondaryContainer);
-        this.onSecondaryContainer = hexNumToHexString(scheme.onSecondaryContainer);
-        this.tertiary = hexNumToHexString(scheme.tertiary);
-        this.onTertiary = hexNumToHexString(scheme.onTertiary);
-        this.tertiaryContainer = hexNumToHexString(scheme.tertiaryContainer);
-        this.onTertiaryContainer = hexNumToHexString(scheme.onTertiaryContainer);
-        this.error = hexNumToHexString(scheme.error);
-        this.onError = hexNumToHexString(scheme.onError);
-        this.errorContainer = hexNumToHexString(scheme.errorContainer);
-        this.onErrorContainer = hexNumToHexString(scheme.onErrorContainer);
-        this.background = hexNumToHexString(scheme.background);
-        this.onBackground = hexNumToHexString(scheme.onBackground);
-        this.surface = hexNumToHexString(surface);
+        this.primary = hexNumToCss(primary);
+        this.onPrimary = hexNumToCss(scheme.onPrimary);
+        this.primaryContainer = hexNumToCss(scheme.primaryContainer);
+        this.onPrimaryContainer = hexNumToCss(scheme.onPrimaryContainer);
+        this.secondary = hexNumToCss(scheme.secondary);
+        this.onSecondary = hexNumToCss(scheme.onSecondary);
+        this.secondaryContainer = hexNumToCss(scheme.secondaryContainer);
+        this.onSecondaryContainer = hexNumToCss(scheme.onSecondaryContainer);
+        this.tertiary = hexNumToCss(scheme.tertiary);
+        this.onTertiary = hexNumToCss(scheme.onTertiary);
+        this.tertiaryContainer = hexNumToCss(scheme.tertiaryContainer);
+        this.onTertiaryContainer = hexNumToCss(scheme.onTertiaryContainer);
+        this.error = hexNumToCss(scheme.error);
+        this.onError = hexNumToCss(scheme.onError);
+        this.errorContainer = hexNumToCss(scheme.errorContainer);
+        this.onErrorContainer = hexNumToCss(scheme.onErrorContainer);
+        this.background = hexNumToCss(scheme.background);
+        this.onBackground = hexNumToCss(scheme.onBackground);
+        this.surface = hexNumToCss(surface);
         this.surface1 = getSurface(1, primary, surface);
         this.surface2 = getSurface(2, primary, surface);
         this.surface3 = getSurface(3, primary, surface);
         this.surface4 = getSurface(4, primary, surface);
         this.surface5 = getSurface(5, primary, surface);
-        this.onSurface = hexNumToHexString(scheme.onSurface);
-        this.surfaceVariant = hexNumToHexString(scheme.surfaceVariant);
-        this.onSurfaceVariant = hexNumToHexString(scheme.onSurfaceVariant);
-        this.outline = hexNumToHexString(scheme.outline);
-        this.outlineVariant = hexNumToHexString(scheme.outlineVariant);
-        this.shadow = hexNumToHexString(scheme.shadow);
-        this.scrim = hexNumToHexString(scheme.scrim);
-        this.inverseSurface = hexNumToHexString(scheme.inverseSurface);
-        this.inverseOnSurface = hexNumToHexString(scheme.inverseOnSurface);
-        this.inversePrimary = hexNumToHexString(scheme.inversePrimary);
+        this.onSurface = hexNumToCss(scheme.onSurface);
+        this.surfaceVariant = hexNumToCss(scheme.surfaceVariant);
+        this.onSurfaceVariant = hexNumToCss(scheme.onSurfaceVariant);
+        this.outline = hexNumToCss(scheme.outline);
+        this.outlineVariant = hexNumToCss(scheme.outlineVariant);
+        this.shadow = hexNumToCss(scheme.shadow);
+        this.scrim = hexNumToCss(scheme.scrim);
+        this.inverseSurface = hexNumToCss(scheme.inverseSurface);
+        this.inverseOnSurface = hexNumToCss(scheme.inverseOnSurface);
+        this.inversePrimary = hexNumToCss(scheme.inversePrimary);
     }
 }
 
-class LightScheme extends CssScheme {
+export class LightScheme extends CssScheme {
     constructor(scheme: Scheme) {
         super(scheme);
     }
 }
 
-class DarkScheme extends CssScheme {
+export class DarkScheme extends CssScheme {
     constructor(scheme: Scheme) {
         super(scheme);
     }
 }
 
-function hexNumToHexString(hexNum: number): string {
-    return `#${hexNum.toString(16).slice(2)}`;
+function hexNumToCss(hexNum: number): string {
+    const [r, g, b] = colorToArray(hexToColor(`#${hexNum.toString(16).slice(2)}`));
+
+    return `${r} ${g} ${b}`;
 }
 
 function getSurface(level: number, primary: number, surface: number): string {
@@ -121,7 +123,9 @@ function getSurface(level: number, primary: number, surface: number): string {
         "value": {"r": redFromArgb(primary), "g": greenFromArgb(primary), "b": blueFromArgb(primary), "a": opacity},
     }, "overlay");
 
-    return colorToHex(rst);
+    const [r, g, b] = colorToArray(rst);
+
+    return `${r} ${g} ${b}`;
 }
 
 export default function (source: string): [LightScheme, DarkScheme] {

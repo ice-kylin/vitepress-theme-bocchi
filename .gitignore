@@ -317,7 +317,6 @@ fabric.properties
 
 pnpm-lock.yaml
 dist
-es
 lib
 build
 tsconfig.tsbuildinfo

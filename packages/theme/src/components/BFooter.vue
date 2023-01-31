@@ -1,40 +1,21 @@
 <template>
-  <footer>
-    <div class="footer-wrapper">
-      <div class="info-wrapper">
-        <div class="info">
-          <p>vitepress-theme-bocchi</p>
+  <footer class="rounded-tl-2xl rounded-tr-2xl bg-surface1">
+    <div class="max-w-6xl p-4 m-auto">
+      <div class="">
+        <div>
+          <p class="info-title font-art text-onSurface text-lg">vitepress-theme-bocchi</p>
+          <p class="text-onSurfaceVariant text-xs">简单、美观、易配置的 vitepress 主题</p>
         </div>
-        <div class="media"></div>
+        <div>
+        </div>
       </div>
-      <div class="links-wrapper"></div>
+      <div class=""></div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import {themeStore} from "../store";
-import {storeToRefs} from "pinia";
-
-const {lightScheme: light} = storeToRefs(themeStore());
 </script>
 
 <style scoped>
-footer {
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  background-color: v-bind('light.surface1');
-  box-sizing: border-box;
-}
-
-.footer-wrapper {
-  max-width: 1152px;
-  margin: auto;
-  padding: 16px;
-}
-
-.info {
-  font-family: Pacifico, sans-serif;
-  color: v-bind('light.onSurface');
-}
 </style>
