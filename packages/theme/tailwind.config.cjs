@@ -43,11 +43,13 @@ module.exports = {
             },
             fontFamily: {
                 sans: [
+                    "Segoe UI Emoji",
                     "Inter",
                     "Noto Sans SC",
                     ...defaultTheme.fontFamily.sans,
                 ],
                 serif: [
+                    "Segoe UI Emoji",
                     "Noto Serif SC",
                     ...defaultTheme.fontFamily.serif,
                 ],
