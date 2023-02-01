@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import Github from "../icons/Github.vue";
 import Gitlab from "../icons/Gitlab.vue";
 import WeChat from "../icons/WeChat.vue";

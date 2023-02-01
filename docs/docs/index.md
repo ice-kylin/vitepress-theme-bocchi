@@ -2,7 +2,7 @@
 layout: home
 ---
 
-# vitepress-theme-bocchi
+# 快速入门
 
 简单、美观、易配置的 vitepress 主题。
 

@@ -3,8 +3,8 @@
   <Footer></Footer>
 </template>
 
-<script setup lang="ts">
-import Footer from "../components/layouts/BFooter.vue";
+<script lang="ts" setup>
+import Footer from "../components/footer/BFooter.vue";
 </script>
 
 <style scoped></style>

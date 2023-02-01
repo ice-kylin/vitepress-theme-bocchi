@@ -1,18 +1,20 @@
-import {themeStore} from "../store";
-import {CssScheme} from "./m3CssColor";
+import { themeStore } from "../store";
+import { CssScheme } from "./m3CssColor";
 
 export default function () {
-    const root = document.querySelector(":root");
-    let scheme: CssScheme;
+  const root = document.querySelector(":root");
+  let scheme: CssScheme;
 
-    if (themeStore().darkMode) {
-        scheme = themeStore().darkScheme;
-    } else {
-        scheme = themeStore().lightScheme;
-    }
+  if (themeStore().darkMode) {
+    scheme = themeStore().darkScheme;
+  } else {
+    scheme = themeStore().lightScheme;
+  }
 
-    if (root) {
-        root.setAttribute("style", `
+  if (root) {
+    root.setAttribute(
+      "style",
+      `
         --md-sys-color-primary: ${scheme.primary};
         --md-sys-color-on-primary: ${scheme.onPrimary};
         --md-sys-color-primary-container: ${scheme.primaryContainer};
@@ -47,6 +49,7 @@ export default function () {
         --md-sys-color-inverse-surface: ${scheme.inverseSurface};
         --md-sys-color-inverse-on-surface: ${scheme.inverseOnSurface};
         --md-sys-color-inverse-primary: ${scheme.inversePrimary};
-        `);
-    }
+        `
+    );
+  }
 }

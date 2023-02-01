@@ -1,7 +1,7 @@
 import Layout from "./layouts/Layout.vue";
 import NotFound from "./layouts/NotFound.vue";
-import {Theme} from "vitepress";
-import {createPinia} from "pinia";
+import { Theme } from "vitepress";
+import { createPinia } from "pinia";
 
 // font
 import "./styles/font.css";
@@ -15,16 +15,14 @@ import applyColor from "./utils/applyColor";
 const pinia = createPinia();
 
 export default {
-    Layout,
-    NotFound,
-    enhanceApp({app}) {
-        app.use(pinia);
+  Layout,
+  NotFound,
+  enhanceApp({ app }) {
+    app.use(pinia);
 
-        applyColor();
-    },
-    setup() {
-    },
+    applyColor();
+  },
+  setup() {},
 } as Theme;
 
-export interface ThemeConfig {
-}
+export interface ThemeConfig {}

@@ -1,7 +1,7 @@
 <template>
-  <hr class="bg-outlineVariant rounded-full" />
+  <div class="bg-outlineVariant rounded-full h-px" />
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <style scoped></style>

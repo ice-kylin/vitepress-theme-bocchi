@@ -1,5 +1,5 @@
 <template>
-  <div class="vp-doc">
+  <div class="flex gap-1 text-onSurfaceVariant items-center">
     <slot></slot>
   </div>
 </template>

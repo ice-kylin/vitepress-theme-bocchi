@@ -1,11 +1,11 @@
 <template>
-  <footer class="bg-surface">
-    <div class="max-w-6xl m-auto p-16">
+  <footer class="px-4 md:px-16">
+    <div class="max-w-7xl mx-auto py-3">
       <HDivider class="mb-4"></HDivider>
       <div class="text-onSurfaceVariant">
         <div>
           <p
-            class="info-title font-art text-lg grabient-text leading-loose my-3"
+            class="info-title font-art text-lg text-onSurface leading-loose my-3"
           >
             icekylin's blog
           </p>
@@ -18,13 +18,8 @@
   </footer>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import HDivider from "../utils/HDivider.vue";
-
-export default defineComponent({
-  components: { HDivider },
-});
 </script>
 
 <style scoped></style>

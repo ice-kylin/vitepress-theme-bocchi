@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import m3Scheme from "../utils/m3CssColor";
 
-const [lightScheme, darkScheme] = m3Scheme("#6600ff");
+const [lightScheme, darkScheme] = m3Scheme("#B2C9FB");
 
 export const themeStore = defineStore("theme", {
   actions: {},
@@ -10,7 +10,7 @@ export const themeStore = defineStore("theme", {
     return {
       lightScheme,
       darkScheme,
-      darkMode: true,
+      darkMode: false,
     };
   },
 });
