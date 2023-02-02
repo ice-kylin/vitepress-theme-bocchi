@@ -17,6 +17,9 @@ import BHeader from "../components/header/BHeader.vue";
 import BHero from "../components/hero/BHero.vue";
 import BArticle from "../components/article/BArticle.vue";
 import SectionDivider from "../components/utils/SectionDivider.vue";
+import { themeStore } from "../store";
+
+themeStore();
 </script>
 
 <style scoped></style>

@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import Icons from "../utils/Icons.vue";
+import Icons from "./HeaderIcon.vue";
 </script>
 
 <style scoped></style>

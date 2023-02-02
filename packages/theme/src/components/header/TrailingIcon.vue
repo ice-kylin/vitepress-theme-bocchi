@@ -14,7 +14,7 @@
 import Github from "../icons/Github.vue";
 import VDivide from "../utils/VDivide.vue";
 import Translate from "../icons/Translate.vue";
-import Icons from "../utils/Icons.vue";
+import Icons from "./HeaderIcon.vue";
 import Icon from "./Icon.vue";
 </script>
 
