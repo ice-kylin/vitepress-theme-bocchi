@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-1 text-onSurfaceVariant items-center">
+  <div class="flex items-center gap-1 text-onSurfaceVariant">
     <slot></slot>
   </div>
 </template>

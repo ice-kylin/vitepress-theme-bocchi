@@ -316,7 +316,7 @@ fabric.properties
 **/.vitepress/temp/
 
 pnpm-lock.yaml
-dist
 lib
 build
 tsconfig.tsbuildinfo
+*.d.ts

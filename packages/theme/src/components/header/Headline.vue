@@ -1,5 +1,5 @@
 <template>
-  <span class="font-art text-onSurface leading-[3rem] grow">
+  <span class="grow font-art leading-[3rem] text-onSurface">
     icekylin's blog
   </span>
 </template>

@@ -2,3 +2,8 @@
     font-family: "Pacifico";
     src: url("../assets/fonts/Pacifico-Regular.ttf");
 }
+
+@font-face {
+    font-family: "Segoe UI Emoji";
+    src: url("../assets/fonts/seguiemj.ttf");
+}

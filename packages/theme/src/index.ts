@@ -2,15 +2,12 @@ import Layout from "./layouts/Layout.vue";
 import NotFound from "./layouts/NotFound.vue";
 import { Theme } from "vitepress";
 import { createPinia } from "pinia";
-
-// font
-import "./styles/font.css";
-// md
-import "./styles/markdown.scss";
-// tailwind
-import "./styles/output.css";
-
 import applyColor from "./utils/applyColor";
+
+import "normalize.css"; // normalize
+import "./styles/font.css"; // font
+import "./styles/markdown.scss"; // md
+import "./styles/output.css"; // tailwind
 
 const pinia = createPinia();
 
@@ -19,7 +16,6 @@ export default {
   NotFound,
   enhanceApp({ app }) {
     app.use(pinia);
-
     applyColor();
   },
   setup() {},

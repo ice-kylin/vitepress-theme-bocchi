@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-full bg-outlineVariant w-px"></div>
+  <div class="w-px rounded-full bg-outlineVariant"></div>
 </template>
 
 <script lang="ts" setup></script>

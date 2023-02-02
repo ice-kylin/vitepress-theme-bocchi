@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-outlineVariant rounded-full h-px" />
+  <div class="h-px rounded-full bg-outlineVariant" />
 </template>
 
 <script lang="ts" setup></script>

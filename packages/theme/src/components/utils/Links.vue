@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-x-3 text-onSurfaceVariant items-center">
+  <div class="flex items-center space-x-2 text-onSurfaceVariant">
     <Github></Github>
     <Gitlab></Gitlab>
     <WeChat></WeChat>

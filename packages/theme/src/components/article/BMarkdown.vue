@@ -1,9 +1,11 @@
 <template>
-  <div class="tb-md">
-    <slot></slot>
+  <div class="vp-doc overflow-hidden">
+    <Content />
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { Content } from "vitepress";
+</script>
 
-<style></style>
+<style scoped></style>
